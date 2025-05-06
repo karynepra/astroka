@@ -1,5 +1,10 @@
 from astropy.io import fits
 from analysis import analyze_headers_dict
+from analysis import analyze_headers_in_directory
+
+# Analisa todos os arquivos .fits_header.txt na pasta 'headers/'
+df = analyze_headers_in_directory("headers/")
+df.to_csv("resumo_headers.csv", index=False)
 
 # Lista de arquivos FITS
 arquivos = ["espectro1.fits", "espectro2.fits"]
